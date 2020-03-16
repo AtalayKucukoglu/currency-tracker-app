@@ -3,6 +3,7 @@ import {
   Text,
   View,
   ImageBackground,
+  ActivityIndicator,
   } from 'react-native'
 import { LineChart, XAxis, YAxis, Grid } from 'react-native-svg-charts'
 import DatePicker from 'react-native-datepicker'
@@ -19,6 +20,7 @@ export default class ExchangeScreen extends React.Component {
         rate: this.props.navigation.getParam('rate'),
         apiURL: "https://api.exchangeratesapi.io/",
         isFirstFetch: true,
+        isDataFetched: false,
       }
     }
 
@@ -49,11 +51,13 @@ export default class ExchangeScreen extends React.Component {
           return dateA - dateB;
         });
         this.setState({rates});
-        console.log(this.state)
+        console.log(this.state);
+        this.setState({isDataFetched: true});
       }
        catch(error) {
         console.error(error);
       }
+      
     }
 
     updateDate () {
@@ -71,10 +75,24 @@ export default class ExchangeScreen extends React.Component {
         startDate = this.state.startDate;
       }
       this.setState({startDate, endDate});
+      this.setState({isDataFetched: false});
       return;
     }
 
     render() {
+
+      if (!this.state.isDataFetched) {
+        return (
+          <ImageBackground source={require('../images/background-dark.jpg')} style={styles.backgroundImage}>
+            <View style={{marginTop:'70%'}}>
+              <ActivityIndicator 
+              size='large' 
+              color='#0000ff' 
+              style={{transform:[{ scaleX: 2 }, { scaleY: 2 }]}} />
+            </View>
+          </ImageBackground>
+        )
+      }
 
         const axesSvg = { fontSize: 10, fill: '#666' };
         const verticalContentInset = { top: 10, bottom: 10 };

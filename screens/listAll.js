@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Picker,
   ImageBackground,
+  ActivityIndicator,
 } from 'react-native'
 
 
@@ -21,6 +22,7 @@ export default class ListAllScreen extends React.Component {
         apiURL: 'https://api.exchangeratesapi.io/latest',
         base: 'EUR',
         rates: [],
+        isDataFetched: false,
       }
     }
     
@@ -50,7 +52,7 @@ export default class ListAllScreen extends React.Component {
           (ele1, ele2) => ele1.name < ele2.name ? 
           -1 : ((ele1.name > ele2.name) ? 1 : 0));
   
-        this.setState({rates: rates});
+        this.setState({rates: rates, isDataFetched: true});
   
       //  console.log("STATES: \n", this.state);
   
@@ -68,6 +70,19 @@ export default class ListAllScreen extends React.Component {
     }
   
     render() {
+      if (!this.state.isDataFetched) {
+        return (
+          <ImageBackground source={require('../images/background-dark.jpg')} style={styles.backgroundImage}>
+            <View style={{marginTop:'70%'}}>
+              <ActivityIndicator 
+              size='large' 
+              color='#0000ff' 
+              style={{transform:[{ scaleX: 2 }, { scaleY: 2 }]}} />
+            </View>
+          </ImageBackground>
+        )
+      }
+
       return (
         <ImageBackground source={require('../images/background-dark.jpg')} style={styles.backgroundImage}>
           <View>
