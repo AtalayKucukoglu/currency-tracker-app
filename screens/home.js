@@ -4,22 +4,6 @@ import { styles } from './styleSheet'
 import { TextInput } from 'react-native-gesture-handler';
 
 export default class HomeScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoggingIn: false,
-      isLoggedIn: false,
-      isInvalidLogin: false,
-      username: '',
-      password: '',
-      users: [
-        { username: "wadawada", password: "1234" },
-        { username: "atalay", password: "1234" },
-        { username: "atacan", password: "8888" },
-        { username: "gamze", password: "1346" },
-      ]
-    }
-  }
 
   checkLogin = () => {
     const username = this.state.username;
@@ -33,7 +17,6 @@ export default class HomeScreen extends React.Component {
       this.setState({isLoggedIn:  true, isLoggingIn: false, isInvalidLogin: false,});
       return true;
     }
-
   }
 
   render() {
@@ -43,6 +26,7 @@ export default class HomeScreen extends React.Component {
           // backgroundColor: '#333388',
           paddingBottom: 100,
         }}>
+{/*           
           {
             !this.state.isLoggedIn && !this.state.isInvalidLogin ? 
           <View style={{ flexDirection: 'row', marginTop: '5%', marginHorizontal: '5%', justifyContent: 'flex-end' }}>
@@ -52,7 +36,6 @@ export default class HomeScreen extends React.Component {
             // style={styles.homePageLoginButton}
             >
               <Text style={styles.homePageLoginText}>Login or Signup</Text>
-
             </TouchableOpacity>
           </View>
           :
@@ -63,10 +46,9 @@ export default class HomeScreen extends React.Component {
             // style={styles.homePageLoginButton}
             >
               <Text style={styles.homePageLoginText}>Hey, {this.state.username}!</Text>
-
             </TouchableOpacity>
           </View>
-          }   
+          }    */}
           <View>
             <Text style={styles.homePageTitle}>Welcome To{'\n'}Currency Tracker</Text>
           </View>
@@ -90,6 +72,7 @@ export default class HomeScreen extends React.Component {
 
         {/*login page*/}
 
+        {/* 
         <Modal
           visible={this.state.isLoggingIn}
           animationType='slide'
@@ -144,7 +127,7 @@ export default class HomeScreen extends React.Component {
               </Text>
             </View>
           </View>
-        </Modal>
+        </Modal> */}
       </ImageBackground>
     )
   }
