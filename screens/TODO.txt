@@ -1,5 +1,7 @@
 Internet bağlantısını kontrol et
 compare:
-input result overfow engelle (girilen miktarı sınırla, hane sayısına göre fontu küçült)
-DONE hesap makinesi gibi tuşlar koy, döviz hesapla 
-hesaplama sayfasında modal kullanarak klavyeyi en alta at (flex: 1)
+  input result overfow engelle (girilen miktarı sınırla, hane sayısına göre fontu küçült)
+  DONE - hesap makinesi gibi tuşlar koy, döviz hesapla 
+
+Done - loading icon koy
+react native community datetimepicker a geç
