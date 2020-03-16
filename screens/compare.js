@@ -10,6 +10,7 @@ import {
   } from 'react-native'
 import {styles} from './styleSheet'
 import NumpadButton from '../components/NumpadButton'
+// import Numpad from '../components/Numpad'
 
 export default class CompareScreen extends React.Component {
     constructor(props) {

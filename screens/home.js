@@ -4,6 +4,16 @@ import { styles } from './styleSheet'
 import { TextInput } from 'react-native-gesture-handler';
 
 export default class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggingIn: false,
+      isLoggedIn: false,
+      isInvalidLogin: false,
+      username: '',
+      password: '',
+    }
+  }
 
   checkLogin = () => {
     const username = this.state.username;
