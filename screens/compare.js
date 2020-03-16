@@ -5,10 +5,11 @@ import {
   Picker,
   ImageBackground,
   TouchableHighlight,
+  Button,
+  Image,
   } from 'react-native'
 import {styles} from './styleSheet'
 import NumpadButton from '../components/NumpadButton'
-import Numpad from '../components/Numpad'
 
 export default class CompareScreen extends React.Component {
     constructor(props) {
@@ -55,7 +56,7 @@ export default class CompareScreen extends React.Component {
 
     calculateCurrency = () => {
       if (this.state.input === '') return ''; 
-      let result = parseInt(this.state.input) * this.state.rate;
+      let result = parseFloat(this.state.input) * this.state.rate;
       result = result.toFixed(2);
       return result;
     }
