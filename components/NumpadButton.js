@@ -1,5 +1,5 @@
 import React from 'react'
-import { TouchableHighlight, Text } from 'react-native'
+import { TouchableHighlight, Text, Image, View } from 'react-native'
 import { styles } from '../screens/styleSheet'
 
 const NumpadButton = props => {
@@ -9,19 +9,19 @@ const NumpadButton = props => {
       underlayColor = '#DDDDDD'
       onPress={props.onButtonPress.bind(this, props.value)}
       style={styles.compareNumberButton} >
-      <Text style={{textAlign: 'center', fontSize: 25}}>{props.value}</Text>
+        {
+          props.value === 'backspace' ?
+          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Image 
+              source= {require('../images/backspace_icon.png')}/>
+          </View>
+          :
+
+          <Text style={{textAlign: 'center', fontSize: 30}}>{props.value}</Text>
+        }
+      
     </TouchableHighlight>
   );
 }
-
-/*
-<TouchableHighlight
-            activeOpacity = {0.3}
-            underlayColor = '#DDDDDD'
-            onPress={() => this.setState({input: this.state.input + 0})}
-            style={styles.compareNumberButton} >
-              <Text style={{textAlign: 'center', fontSize: 25}}>0</Text>
-            </TouchableHighlight>
-            */
 
 export default NumpadButton;
