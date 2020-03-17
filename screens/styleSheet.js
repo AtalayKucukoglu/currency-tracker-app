@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     textShadowRadius: 10,
     color: 'white',
     marginTop: '15%',
-    marginBottom: '40%',
+    marginBottom: '50%',
     marginHorizontal: '5%',
   },
   homePageLoginButton: {
@@ -53,7 +53,7 @@ export const styles = StyleSheet.create({
   },
   homePageButtonText: {
     color: '#3B6BEF',
-    fontSize: 30,
+    fontSize: 28,
     textAlign: 'center',
   },
   loginText: {
@@ -154,7 +154,7 @@ export const styles = StyleSheet.create({
     marginTop: '5%', 
   },
   compareNumberRow: {
-    height: '20%',
+    height: '15%',
     flexDirection: 'row',
   },
   compareNumberButton: {

@@ -87,9 +87,9 @@ export default class ListAllScreen extends React.Component {
         <ImageBackground source={require('../images/background-dark.jpg')} style={styles.backgroundImage}>
           <View>
             <Picker
-              mode = 'dropdown'
+              mode = 'dialog'
               selectedValue={this.state.base}
-              style={{marginLeft: 40, height: 50, width: 150, color: 'white',
+              style={{marginLeft: 40, height: 50, width: '40%', color: 'white',
               transform: [
                 { scaleX: 1.5 },
                 { scaleY: 1.5 },
@@ -109,7 +109,7 @@ export default class ListAllScreen extends React.Component {
               Base: {this.state.base}
             </Text>
             <FlatList
-              style = {{marginBottom: 83, marginTop: 15 }}
+              style = {{marginBottom: '15%', marginTop: 15 }}
               data = {this.state.rates}
               keyExtractor = {(item, index) => index.toString()}
               renderItem = {({item, index}) => {

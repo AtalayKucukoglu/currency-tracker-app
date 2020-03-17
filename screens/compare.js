@@ -131,7 +131,7 @@ export default class CompareScreen extends React.Component {
                 </View>
               </View>
             </View>
-            <View style={{flex: 1, justifyContent: 'flex-end'}}>
+            <View style={{flex: 1, justifyContent: 'flex-end',}}>
               {/* <Numpad onButtonPress={this.buttonPressHandler}/>         */}
               <View style={styles.compareNumberRow}>
                 <NumpadButton value={1} onButtonPress={this.buttonPressHandler} />
