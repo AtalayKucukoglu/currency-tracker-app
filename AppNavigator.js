@@ -4,6 +4,7 @@ import HomeScreen from './screens/home';
 import ListAllScreen from './screens/listAll';
 import ExchangeScreen from './screens/exchange';
 import CompareScreen from './screens/compare';
+import TestScreen from './screens/test'
 
 const RootStack = createStackNavigator(
   {
@@ -16,6 +17,7 @@ const RootStack = createStackNavigator(
     'List All': ListAllScreen,
     Exchange: ExchangeScreen,
     Compare: CompareScreen,
+  //  Test: TestScreen,  // to test things
   },
   {
     initialRouteName: 'Home',
